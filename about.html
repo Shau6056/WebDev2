@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Quiz Challenge</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+	<link rel="stylesheet" href="css/styles.css">
+
+
+	
+    <style>
+    </style>
+	
+</head>
+<body>
+
+<header id="mainHeader" style="background-image: url('images/header.jpg');">
+    <div class="ui container">
+        <h1 class="ui huge header inverted">Welcome to the Quizzes!</h1>
+    </div>
+</header>
+
+<div class="ui top attached tabular menu centered-menu">
+    <a class="item" href="index.html">Quiz Options</a>
+    <a class="item" href="generalknowledgequiz.html">General Knowledge Quiz</a>
+    <a class="item" href="sportquiz.html">Sports Quiz</a>
+    <a class="item" href="music.html">Music Quiz</a>
+	<a class="active item" href="about.html">About</a>
+</div>
+
+<div class="ui container">
+    <div class="ui segment">
+        <h1 id="page_title" class="title">About the quiz website!</h1>
+        <p id=""></p>
+    </div>
+</div>
+
+	<section>
+					<div class="ui container text-center">
+					<h1 class="headingOne"> Lets learn about General Knowledge Quizzes!</h1>
+					<p>This website was created to show the user a beautiful expierence to the quiz world, its not too easy 
+					and its not to hard but it will make the 
+					user think.
+					</p>
+
+					<button id="btn1">Read More</button>
+					<div id="moreOne">
+					
+						<h2>More on that note..</h2>
+						<p>
+							It is believed that doing quizzes makes us sharp and makes our life more fulfilling and wondeerful.
+							It is important to keep the mind engaged and full of pointless but fun information. 
+							We must learn and delves into things that we may not know.
+							<br>
+							<br>
+							<br>
+							<div class="imageWise">
+							<img class="ui medium rounded image" src="images/wisdom.jpg">
+						    </div>
+							<br>
+							<br>
+							<br>
+						</p>
+				</div>
+				</div>
+				</section>
+
+
+<main class="ui container">
+    <section class="main-content">
+        <div class="quiz-card">
+			<img class="ui medium circular image" src="images/generalkno.jpg">
+            <h3>The General Knowledge Quiz</h3>
+            <p>Test your General Knowledge with this Quiz!</p>
+             <a href="generalknowledgequiz.html" class="ui button take-quiz-button">Take Quiz</a>
+        </div>
+        
+        <div class="quiz-card">
+		<img class="ui medium circular image" src="images/sports.jpg">
+            <h3>The Sports Quiz</h3>
+            <p>How well do you know sports?</p>
+            <a href="sportquiz.html" class="ui button take-quiz-button">Take Quiz</a>
+        </div>
+
+
+        <div class="quiz-card">
+		<img class="ui medium circular image" src="images/music.jpg">
+            <h3>The Music Quiz</h3>
+            <p>Type in yours musical answers!</p>
+            <a href="music.html" class="ui button take-quiz-button">Take Quiz</a>
+        </div>
+    </section>
+</main>
+
+<div id="Website-container"></div>
+
+<footer>
+    <p>&copy; Copyright 2030. Author: Shauna Ryan</p>
+</footer>
+<script src="js/jsfile.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/handlebars/dist/handlebars.min.js"></script>
+<script id="Website-template" type="text/x-handlebars-template">
+  {{#each websiteMakers}}
+    <div class="WebsiteMakers">
+      <h2>{{name}}</h2>
+      <p>{{role}}</p>
+      <p>{{Age}}</p>
+    </div>
+  {{/each}}
+</script>
+
+
+</body>
+</html>

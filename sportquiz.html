@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Quiz Challenge</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header id="mainHeader" style="background-image: url('images/header.jpg');">
+    <div class="ui container">
+        <h1 class="ui huge header inverted">Welcome to the Quizzes!</h1>
+    </div>
+</header>
+
+
+<div class="ui top attached tabular menu centered-menu">
+    <a class="item" href="index.html">Quiz Options</a>
+    <a class="item" href="generalknowledgequiz.html">General Knowledge Quiz</a>
+    <a class="active item" href="sportquiz.html">Sports Quiz</a>
+    <a class="item" href="music.html">Music Quiz</a>
+	<a class="item" href="about.html">About</a>
+</div>
+
+<div class="ui container">
+    <div class="ui segment">
+       <h1 id="page_title" class="title">Sports Quiz!</h1>
+        <p id=""></p>
+    </div>
+</div>
+
+<div id="quizContainer" class="ui container"> 
+</div>
+
+<button type="button" onclick="submitQuiz()" class="ui button primary">Submit Quiz</button>
+
+<section>
+					<div class="ui container text-center">
+					<h1 class="headingOne"> Sports Quizzes!</h1>
+					<p>Quizzes are good but nothing beats a sports quiz....
+					</p>
+
+					<button id="btn1">Read More</button>
+					<div id="moreOne">
+					
+						<h2>More on that note..</h2>
+						<p>
+							If you want to show off to your mates showing them how much sport you have watched throughout your life
+							there is no better way then a sport quiz!
+							<br>
+							<br>
+							<br>
+							<div class="imageWise">
+							<img class="ui medium rounded image" src="images/sportsTwo.jpg">
+						    </div>
+							<br>
+							<br>
+							<br>
+						</p>
+				</div>
+				</div>
+				</section>
+
+
+<footer>
+    <p>&copy; Copyright 2030. Author: Shauna Ryan</p>
+</footer>
+
+<script src="js/jsfile.js"></script>
+<script>
+const questionsSport = [
+    { question: "Who is a the best male tennis player?", answers: ["Novak Djokovic", "Rafael Nadal", "Roger Federer", "Andre Agassi"], correct: 0 },
+    { question: "Who is the highest soccer earner?", answers: ["Messi", "Stephan Gerrad", "Ronaldo", "Peter Croach"], correct: 1 },
+    { question: "What country has won the most world cups?", answers: ["Portugal", "USA", "Germany", "Brazil"], correct: 3 },
+    { question: "What is the most watched sport?", answers: ["Hurling", "Darts", "Soccer", "Swimming"], correct: 2 },
+    { question: "What is the name of the most popular Irish UFC fighter?", answers: ["Bob Fulham", "Coban Runkon", "Conor Mcgregor", "Curt Kobain"], correct: 2 },
+    { question: "What sport does Rory Mccolroy play?", answers: ["Darts", "Soccer", "Golf", "Cricket"], correct: 2 },
+    { question: "Where is the largest sport staduim in the world?", answers: ["North Korea", "USA", "England", "Germany"], correct: 0 },
+    { question: "What is the most viewed sport in the USA?", answers: ["Basket ball", "American Football", "Baseball", "Ping pong"], correct: 1 }
+];
+
+document.addEventListener('DOMContentLoaded', function() {
+    const quizContainer = document.getElementById('quizContainer');
+
+    questionsSport.forEach((q, qIndex) => {
+        const questionDiv = document.createElement('div');
+        const questionText = document.createElement('h3');
+        questionText.textContent = q.question;
+        questionDiv.appendChild(questionText);
+
+        q.answers.forEach((answer, aIndex) => {
+            const label = document.createElement('label');
+            const input = document.createElement('input');
+            input.type = 'radio';
+            input.name = `question${qIndex}`;
+            input.value = aIndex;
+            label.appendChild(input);
+            label.append(' ' + answer);
+            questionDiv.appendChild(label);
+        });
+
+        quizContainer.appendChild(questionDiv);
+    });
+});
+
+function submitQuiz() {
+    let score = 0;
+    questions.forEach((q, index) => {
+        const selected = document.querySelector(`input[name="question${index}"]:checked`);
+        if (selected && parseInt(selected.value) === q.correct) {
+            score++;
+        }
+    });
+    alert(`You scored ${score} out of ${questions.length}`);
+}
+</script>
+
+
+
+</body>
+</html>

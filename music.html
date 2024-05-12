@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Quiz Challenge</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header id="mainHeader" style="background-image: url('images/header.jpg');">
+    <div class="ui container">
+        <h1 class="ui huge header inverted">Welcome to the Quizzes!</h1>
+    </div>
+</header>
+
+
+<div class="ui top attached tabular menu centered-menu">
+    <a class="item" href="index.html">Quiz Options</a>
+    <a class="item" href="generalknowledgequiz.html">General Knowledge Quiz</a>
+    <a class="item" href="sportquiz.html">Sports Quiz</a>
+    <a class="active item" href="music.html">Music Quiz</a>
+	<a class="item" href="about.html">About</a>
+</div>
+
+<div class="ui container">
+    <div class="ui segment">
+        <h1 id="page_title" class="title">Bop Bop Bop we got a music Quiz!</h1>
+        <p id=""></p>
+    </div>
+</div>
+
+<div id="quizContainer" class="ui container">
+</div>
+	
+    <div class="ui container">
+    <form class="ui form" id="quiz">
+        <div class="field">
+            <label>What member of the Beatles was famously killed?</label>
+            <input type="text" id="answer1" placeholder="Your answer">
+        </div>
+        <div class="field">
+            <label>Who was known as the King of Rock and Roll?</label>
+            <input type="text" id="answer2" placeholder="Your answer">
+        </div>
+        <div class="field">
+            <label>What is the real name of the rapper "Slim Shady"?</label>
+            <input type="text" id="answer3" placeholder="Your answer">
+        </div>
+        <div class="field">
+            <label>What is the next lyric to this song "All you need is"?</label>
+            <input type="text" id="answer4" placeholder="Your answer">
+        </div>
+        <div class="field">
+            <label>Who was the main singer of Nirvana?</label>
+            <input type="text" id="answer5" placeholder="Your answer">
+        </div>
+        <div class="field">
+            <label>What band sings "Sex is on fire"?</label>
+            <input type="text" id="answer6" placeholder="Your answer">
+        </div>
+        <div class="field">
+            <label>Who was on stage with Janet Jackson at the Super Bowl when a scandal happened?</label>
+            <input type="text" id="answer7" placeholder="Your answer">
+        </div>
+        <div class="field">
+            <label>What is Lady Gaga's first real name?</label>
+            <input type="text" id="answer8" placeholder="Your answer">
+        </div>
+        <button class="ui button primary" type="button" onclick="submitAnswers()">Submit Answers</button>
+    </form>
+
+    <div id="result" class="ui message"></div>
+</div>
+
+<div class="ui container text-center">
+					<h1 class="headingOne"> Music Quiz!</h1>
+					<p>Music is the most beautiful thing, music can bring all peoples together...
+					</p>
+
+					<button id="btn1">Read More</button>
+					<div id="moreOne">
+					
+						<h2>More on that note..</h2>
+						<p>
+							There is nothing better and more beautiful then a concert where all wakes of people come together
+							and expierence the beautiful sound of music! There has been many occasion where people are come and just chilled 
+							to the sound of a band or singer. 
+							<br>
+							<br>
+							<br>
+							<div class="imageWise">
+							<img class="ui medium rounded image" src="images/musicTwo.jpg">
+						    </div>
+							<br>
+							<br>
+							<br>
+						</p>
+				</div>
+				</div>
+				</section>
+
+<footer>
+    <p>&copy; Copyright 2030. Author: Shauna Ryan</p>
+</footer>
+
+<script src="js/jsfile.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    function submitAnswers() {
+        const answers = [
+            document.getElementById('answer1').value,
+            document.getElementById('answer2').value,
+            document.getElementById('answer3').value,
+            document.getElementById('answer4').value,
+            document.getElementById('answer5').value,
+            document.getElementById('answer6').value,
+            document.getElementById('answer7').value,
+            document.getElementById('answer8').value
+        ];
+
+        const correctAnswers = ["John Lennon", "Elvis Presley", "Marshal Mathers", "Love", "Kurt Kobain", "Kings of Leon", "Justin Timberlake", "Stefani"];
+        let score = 0;
+
+        answers.forEach((answer, index) => {
+            if (cleanInput(answer) === correctAnswers[index].toLowerCase()) {
+                score++;
+            }
+        });
+
+        document.getElementById('result').textContent = `You scored ${score} out of ${correctAnswers.length}.`;
+    }
+
+    function cleanInput(input) {
+        return input.trim().toLowerCase();
+    }
+
+    document.querySelector('button').addEventListener('click', submitAnswers);
+});
+</script>
+
+
+
+</body>
+</html>
